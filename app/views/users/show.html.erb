@@ -1,0 +1,30 @@
+<div class="container">
+  <h1><%= @user.name %></h1>
+  <p>Profile</p>
+
+    <div class="row">
+      <div class="col-md-2">
+        <strong><strong>Email:</strong>
+      </div>
+      <div class="col-md-4">
+        <%= @user.email %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <strong><strong>Last Log In:</strong>
+      </div>
+      <div class="col-md-4">
+        <%= @user.last_sign_in_at %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <strong><strong>Member Since:</strong>
+      </div>
+      <div class="col-md-4">
+        <%= @user.created_at %>
+      </div>
+    </div>
+
+</div>
