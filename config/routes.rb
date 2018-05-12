@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'users/show/:id', to: 'users#show', as: 'users_show'
-
+  #get 'users/show/:id', to: 'users#show', as: 'users_show'
   devise_for :users
+
+  resources :users, only: [:show]
 
   get 'welcome/index'
 
