@@ -26,5 +26,11 @@
         <%= @user.created_at %>
       </div>
     </div>
+    <div class="row">
+      <div class="col-md-8">
+        <%= render 'items/form', item: Item.new, user: @user %>
+        <%= render @items %>
+      </div>
+    </div>
 
 </div>

@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'items/create'
-
   devise_for :users
 
   #get 'users/show/:id', to: 'users#show', as: 'users_show'
