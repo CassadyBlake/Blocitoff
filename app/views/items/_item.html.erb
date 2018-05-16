@@ -2,7 +2,8 @@
   <div class="media-body">
     <h4 class="media-heading">
       <%= item.name %>
-      <%= link_to "", user_item_url(current_user, item), method: :delete, class: 'glyphicon glyphicon-ok' %>
+      <%= link_to "", user_item_url(current_user, item), method: :delete, class: 'glyphicon glyphicon-ok' %></br>
+      <small>Days left to complete: <%= distance_of_time_in_words(item.created_at + 7.days, Time.now) %></small>
     </h4>
   </div>
 </div>
