@@ -6,18 +6,24 @@ class ItemsController < ApplicationController
     @item = Item.create(item_params)
     @item.user = current_user
 
-    @item.save
     respond_to do |format|
-      format.html { redirect_to root_path }
-      format.js { }
+      format.html do
+        if @item.save
+          flash[:notice] = "New item has been saved."
+        else
+          flash[:alert] = "There was an error saving the item, please try again."
+        end
+        redirect_to root_path
+      end
+
+      format.js do
+        if @item.save
+          flash.now[:notice] = "New item has been saved."
+        else
+          flash.now[:alert] = "There was an error saving the item, please try again."
+        end
+      end
     end
-#    if @item.save
-#      flash[:notice] = "New item has been saved."
-#      redirect_to user_path(current_user)
-#    else
-#      flash[:alert] = "There was an error saving the item, please try again."
-#      render :create
-#    end
   end
 
   def destroy
@@ -26,15 +32,6 @@ class ItemsController < ApplicationController
     @item.destroy
 
     @items = @user.items.all
-
-
-#      flash[:notice] = "\"#{@item.name}\" completed."
-#      redirect_to root_path
-#    else
-#      flash.now[:alert] = "There was an error completing the item. Please try again."
-#      redirect_to root_path
-#    end
-
   end
 
   def item_params
