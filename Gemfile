@@ -61,3 +61,5 @@ gem 'devise'
 
 # Use faker to seed data
 gem 'faker'
+
+gem 'whenever', require: false
