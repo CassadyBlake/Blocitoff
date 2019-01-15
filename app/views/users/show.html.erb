@@ -1,4 +1,5 @@
 <div class="container">
+<div class="userInfo">
   <h1><%= @user.name %></h1>
   <p>Profile</p>
 
@@ -31,6 +32,7 @@
         <%= render 'items/form', item: Item.new, user: @user %>
       </div>
     </div>
+  </div>
     <div class="row">
       <div class="col-md-8" id="items">
         <%= render @items %>

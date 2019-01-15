@@ -1,7 +1,7 @@
-<div>
+<div id="itemBox">
   <h4>
-    <%= item.name %>
-    <%= link_to "", user_item_url(@user, item), class: 'glyphicon glyphicon-ok', remote: true, method: :delete %></br>
+    <%= link_to "", user_item_url(@user, item), class: 'glyphicon glyphicon-ok', remote: true, method: :delete %>
+    <%= item.name %></br>
     <small>Days left to complete: <%= (item.created_at + 7.days) < Time.now ? "Passed Due" : distance_of_time_in_words(item.created_at + 7.days, Time.now) %></small>
   </h4>
 </div>
