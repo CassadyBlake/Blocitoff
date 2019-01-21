@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+
 ruby '2.5.3'
 
 git_source(:github) do |repo_name|
@@ -48,7 +49,7 @@ end
    gem 'listen', '~> 3.0.5'
    gem 'pry-rails'
  end
- 
+
 # Use devise to set up user authentication
 gem 'devise'
 
